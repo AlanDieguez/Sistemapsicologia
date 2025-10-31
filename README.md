@@ -1,1 +1,1222 @@
-# Sistemapsicologia
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equilibria Psicología Clínica - Bienestar Emocional en Guatemala</title>
+    <style>
+        :root {
+            --primary: #2a9d8f;
+            --primary-light: #8ecae6;
+            --secondary: #264653;
+            --accent: #e9c46a;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #2b2d42;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fefefe;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(42, 157, 143, 0.1) 0%, rgba(139, 202, 230, 0.1) 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(42, 157, 143, 0.4);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-shape {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(42, 157, 143, 0.1) 0%, rgba(139, 202, 230, 0.1) 100%);
+            top: -200px;
+            right: -100px;
+            z-index: 1;
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .value-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(42, 157, 143, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-header {
+            padding: 25px 25px 15px;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(42, 157, 143, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .service-content {
+            padding: 0 25px 25px;
+        }
+        
+        .service-content h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .service-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Virtual Section */
+        .virtual {
+            background: linear-gradient(135deg, rgba(42, 157, 143, 0.05) 0%, rgba(139, 202, 230, 0.05) 100%);
+        }
+        
+        .virtual-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .virtual-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .virtual-image {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .platforms {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .platform {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+        }
+        
+        .platform i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light);
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            height: 250px;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h4 {
+            margin-bottom: 5px;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .hours {
+            margin-top: 30px;
+        }
+        
+        .hours h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Psychologist */
+        .psychologist {
+            background-color: var(--light);
+        }
+        
+        .psychologist-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .psychologist-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .psychologist-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .psychologist-content h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .credentials {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">Equilibria <span>Psicología</span></div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#virtual">Atención Virtual</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section / Inicio -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bienestar emocional para <span>tu equilibrio mental</span></h1>
+                <p>En Equilibria Psicología Clínica acompañamos tu bienestar emocional y mental desde un enfoque humano, ético y empático. Nuestro objetivo es brindarte un espacio seguro para comprender tus emociones, fortalecer tu autoestima y promover tu desarrollo personal.</p>
+                <div>
+                    <a href="#contacto" class="btn">Solicitar Consulta</a>
+                    <a href="#galeria" class="btn btn-outline">Ver Nuestro Espacio</a>
+                </div>
+            </div>
+            <div class="hero-shape"></div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestra Filosofía</h2>
+                <p class="section-subtitle">Comprometidos con tu bienestar emocional y mental</p>
+            </div>
+            <div class="about-container">
+                <div class="about-content">
+                    <h3>Misión y Visión</h3>
+                    <p><strong>Misión:</strong> Brindar atención psicológica integral con base científica y humana, promoviendo el bienestar emocional, la salud mental y el equilibrio psicológico en cada persona que busca apoyo.</p>
+                    <p><strong>Visión:</strong> Ser un referente en atención psicológica virtual y presencial en Guatemala, reconocida por la calidez humana, profesionalismo y compromiso con el crecimiento personal de nuestros pacientes.</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Empatía</h4>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h4>Confidencialidad</h4>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>Ética Profesional</h4>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Responsabilidad Social</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- AQUÍ COLOCA TU IMAGEN -->
+                    <img src="consultagrupal.jpg" alt="Consultorio principal de Equilibria Psicología" class="gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Atención psicológica especializada para adultos y adolescentes</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Terapia Individual</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Atención personalizada para abordar problemas emocionales, de conducta o de adaptación.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Adultos y adolescentes</li>
+                            <li><i class="fas fa-check"></i> Ansiedad, depresión y estrés</li>
+                            <li><i class="fas fa-check"></i> Autoestima y crecimiento personal</li>
+                            <li><i class="fas fa-check"></i> Acompañamiento en duelo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Terapia de Pareja</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Espacio para mejorar la comunicación, resolver conflictos y fortalecer la relación.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Mejora de comunicación</li>
+                            <li><i class="fas fa-check"></i> Resolución de conflictos</li>
+                            <li><i class="fas fa-check"></i> Fortalecimiento de vínculos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Evaluaciones Psicológicas</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Evaluaciones clínicas para diagnóstico y orientación en procesos de selección.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Evaluaciones clínicas</li>
+                            <li><i class="fas fa-check"></i> Orientación vocacional</li>
+                            <li><i class="fas fa-check"></i> Procesos de selección</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <p><strong>Duración de sesión:</strong> 50 minutos | <strong>Costo aproximado:</strong> Q200 por sesión (virtual o presencial)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atención Virtual -->
+    <section class="virtual" id="virtual">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Atención Virtual</h2>
+                <p class="section-subtitle">Sesiones en línea para tu comodidad y seguridad</p>
+            </div>
+            <div class="virtual-container">
+                <div class="virtual-image">
+                    <!-- AQUÍ COLOCA TU IMAGEN -->
+                    <img src="virtual.jpeg" alt="Sesión de terapia virtual" class="gallery-img">
+                </div>
+                <div class="virtual-content">
+                    <h3>Sesiones en línea desde cualquier lugar</h3>
+                    <p>Ofrecemos consultas psicológicas a través de videollamadas seguras y confidenciales, con la misma calidad que nuestras sesiones presenciales.</p>
+                    
+                    <div class="platforms">
+                        <div class="platform">
+                            <i class="fas fa-video"></i> Google Meet
+                        </div>
+                        <div class="platform">
+                            <i class="fas fa-video"></i> Zoom
+                        </div>
+                    </div>
+                    
+                    <p>Modalidades disponibles:</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Presencial (con cita previa)</li>
+                        <li><i class="fas fa-check"></i> Virtual (vía Google Meet o Zoom)</li>
+                    </ul>
+                    
+                    <a href="#contacto" class="btn" style="margin-top: 20px;">Agendar Sesión Virtual</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestro Espacio</h2>
+                <p class="section-subtitle">Conoce nuestro consultorio, un ambiente diseñado para tu bienestar</p>
+            </div>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="consultorio">Consultorio</button>
+                <button class="filter-btn" data-filter="sala-espera">Sala de Espera</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="consultorio">
+                    <img src="consultorio-2.jpg" alt="Consultorio principal con sofá y sillas cómodas" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Consultorio Principal</h4>
+                        <p>Espacio acogedor para sesiones individuales</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="consultorio">
+                    <img src="consultorio.jpg" alt="Área de terapia con iluminación natural" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Área de Terapia</h4>
+                        <p>Ambiente tranquilo con iluminación natural</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="sala-espera">
+                    <img src="salaespera.jpg" alt="Sala de espera cómoda con revistas" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Sala de Espera</h4>
+                        <p>Espacio cómodo antes de tu sesión</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exteriores">
+                    <img src="entrada.jpg" alt="Entrada principal del consultorio" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Entrada Principal</h4>
+                        <p>Acceso fácil y señalización clara</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="consultorio">
+                    <img src="terapia.jpg" alt="Espacio de relajación con plantas" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Espacio de Relajación</h4>
+                        <p>Área diseñada para técnicas de relajación</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Psicóloga -->
+    <section class="psychologist">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestra Psicóloga</h2>
+                <p class="section-subtitle">Conoce a la profesional detrás de Equilibria Psicología</p>
+            </div>
+            <div class="psychologist-container">
+                <div class="psychologist-image">
+                    <!-- AQUÍ COLOCA TU FOTO -->
+                    <img src="" alt="Licda. Sara Yuliana López Villagrán - Psicóloga Clínica" class="gallery-img">
+                </div>
+                <div class="psychologist-content">
+                    <h3>Licda. Sara Yuliana López Villagrán</h3>
+                    <p>Psicóloga Clínica comprometida con el bienestar emocional de cada paciente, brindando un espacio seguro, confidencial y profesional para el crecimiento personal.</p>
+                    
+                    <div class="credentials">
+                        <p><strong>Formación:</strong> Psicóloga Clínica - Universidad Mariano Gálvez</p>
+                        <p><strong>Especialidades:</strong> Terapia individual, terapia de pareja, manejo de ansiedad y depresión, crecimiento personal.</p>
+                    </div>
+                    
+                    <p>Mi enfoque terapéutico se basa en la combinación de técnicas científicamente validadas con un trato humano y empático, adaptándome a las necesidades específicas de cada persona.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">Estamos aquí para ayudarte. Agenda tu cita hoy mismo</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Dirección</h4>
+                            <p>Oficina virtual — Atención en línea para toda Guatemala</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Teléfono / WhatsApp</h4>
+                            <p>+502 5486-1391</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>sara.lopez@equilibriapsi.com.gt</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hours">
+                        <h3>Horarios de Atención</h3>
+                        <ul class="hours-list">
+                            <li><span>Lunes a Viernes:</span> <span>9:00 a.m. – 6:00 p.m.</span></li>
+                            <li><span>Sábado:</span> <span>9:00 a.m. – 12:00 p.m.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                <option value="terapia-individual">Terapia Individual</option>
+                                <option value="terapia-pareja">Terapia de Pareja</option>
+                                <option value="evaluaciones">Evaluaciones Psicológicas</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Equilibria Psicología</h3>
+                    <p>Brindamos atención psicológica integral con base científica y humana, promoviendo el bienestar emocional y el equilibrio psicológico.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/EquilibriaPsicologiaGT" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/equilibria.psi" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/in/saralopezvillagran" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@EquilibriaPsicologia" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#virtual">Atención Virtual</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Terapia Individual</a></li>
+                        <li><a href="#servicios">Terapia de Pareja</a></li>
+                        <li><a href="#servicios">Evaluaciones Psicológicas</a></li>
+                        <li><a href="#servicios">Orientación Vocacional</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Equilibria Psicología Clínica. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Gallery Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
